@@ -8,10 +8,8 @@ def plot_func_values(f_history):
     f_history = np.array(f_history)
     plt.plot(f_history)
     plt.scatter(range(len(f_history)), f_history, color='blue', marker='o', s=50, label='intermediate values')
-    # add marks for the start and final points
     plt.scatter(0, f_history[0], color='red', marker='o', s=50, label='Start value')
     plt.scatter(len(f_history) - 1, f_history[-1], color='gold', marker='o', s=50, label='Final value')
-    # add marks for the intermediate points
 
     plt.xlabel('Iteration')
     plt.ylabel('Function value')
@@ -57,7 +55,6 @@ def draw_2d_feasible_region(ax):
                    Y - 1,
                    X - 2, 
                    Y]
-    # add the constraint lines colors
 
     for constraint, color in zip(constraints, ['green', 'red', 'blue', 'orange']):
         ax.contour(X, Y, constraint, levels=[0], colors=color, linestyles='dashed', linewidths=1)
@@ -90,8 +87,6 @@ def plot_minimization_path_3d(ax, x_history):
 def plot_minimization_path_2d(ax, x_history):
     x_history = np.array(x_history)
     ax.plot(x_history[:, 0], x_history[:, 1])
-    # annotate_minimization_path(ax, x_history)
-    # add the start and final points and intermediate points
     ax.scatter(x_history[:, 0], x_history[:, 1], color='blue', marker='o', s=20, label='intermediate points')
     ax.scatter(x_history[0][0], x_history[0][1], color='red', marker='o', s=60, label='Start point')
     ax.scatter(x_history[-1][0], x_history[-1][1], color='gold', marker='o', s=60, label='Final candidate')
@@ -101,7 +96,4 @@ def plot_minimization_path_2d(ax, x_history):
     ax.set_title('2D Minimization Path')
     ax.legend()
 
-def annotate_minimization_path(ax, x_history):
-    for start, end in zip(x_history[:-1], x_history[1:]):
-        ax.annotate('', xy=end, xytext=start, 
-                    arrowprops={'arrowstyle': '->', 'lw': 1})
+
