@@ -1,7 +1,4 @@
-import math
-from matplotlib import pyplot as plt
 import numpy as np
-
 
 def interior_pt(func, ineq_constraints, eq_constraints_mat, eq_constraints_rhs, x0, max_iter=10):
     t = 1.0
