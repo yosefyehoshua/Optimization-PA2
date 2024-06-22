@@ -3,7 +3,6 @@ from src.constrained_min import *
 from tests.examples import *
 from src.utils import plot_path
 from src.utils import plot_func_values
-import matplotlib.pyplot as plt
 
 class TestMinMethods(unittest.TestCase):
     def test_qp(self):
