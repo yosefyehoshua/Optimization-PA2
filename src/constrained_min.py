@@ -12,7 +12,6 @@ def interior_pt(func, ineq_constraints, eq_constraints_mat, eq_constraints_rhs, 
         for _ in range(max_iter):
             p = solve_kkt(eq_constraints_mat, g_x, h_x)
             alpha = wolfe_update(func, x, f_x, g_x, p, c1=0.01, rho=0.5)
-            #alpha = wolfe_condition_with_backtracking(func, x, f_x, g_x, p)
             x = x + alpha * p
             f_x_next, g_x_next, h_x_next = update_barrier_values(func, ineq_constraints, x, t)
             if 0.5 * np.linalg.norm(g_x_next, 2) ** 2 < 1e-8: break
