@@ -22,7 +22,6 @@ class TestMinMethods(unittest.TestCase):
     def test_lp(self):
         x0 = np.array([0.5, 0.75], dtype=np.float64)
         func = lp
-        barrier_func = f2_phi
         eq_constraints_mat = None
         eq_constraints_rhs = None 
         ineq_constraints = [lp_constraint_1, lp_constraint_2, lp_constraint_3, lp_constraint_4]
